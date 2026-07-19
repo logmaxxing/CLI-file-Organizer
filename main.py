@@ -8,7 +8,9 @@ import shutil
 #parsers/args and variables
 home = Path.home()
 
-
+# You can add own extensions here under pre-defined folder names(Keys in file_types) 
+# or Create your own separate one with this format, make sure you make it inside file_types disctionary
+# "xyz":['.extentions']
 file_types= {
     "Pictures" : [
         '.jpg','.png','.webp','.gif','.svg','.tiff','.tif','.heic','.heif','.bmp'
