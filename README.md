@@ -245,5 +245,4 @@ Planned improvements include:
 MIT License
 
 ---
-
-Built for people who like keeping things clean and organized — straight from the terminal.
+If you use this in a project you showcase publicly, a mention would be appreciated (but not required).
