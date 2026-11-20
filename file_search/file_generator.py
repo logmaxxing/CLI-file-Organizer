@@ -41,5 +41,4 @@ for i in range(files):
     # Create the empty dummy file
     file_to_create.touch()
 
-print(f"✨ Successfully generated {files} random files for testing! ✨")
-print(f"To test your script, run: python main.py {TEST_DIR_NAME} --confirm -your-flags")
+print(f"Successfully generated {files} random files for testing!")

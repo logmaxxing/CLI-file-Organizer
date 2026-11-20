@@ -11,7 +11,7 @@
   "Documents": [
     ".pdf", ".docx", ".xlsx", ".pptx", ".txt", ".csv"
     ],
-  "dev_files": [
+  "Code": [
     ".py", ".js", ".ts", ".java", ".cpp", ".json", ".md", ".html", ".css"
     ],
   "Packages": [

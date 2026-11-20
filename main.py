@@ -1,6 +1,6 @@
 from pathlib import Path
 import json
-# from os import scandir, replace
+from os import scandir, replace
 from argparse import Namespace,ArgumentParser
 import shutil
 
@@ -172,8 +172,7 @@ def move_files():
                             continue
                         elif ARGS.overwrite:
                             print(f"[OVERWRITE] Replacing : {file_name}")
-                            shutil.copy2(file_path,dest_folder)
-                            Path(file_path).unlink()
+                            replace(file_path,dest_file_path)
                         elif ARGS.delete:
                             file_path.unlink()
                             dest_file_path.unlink()
