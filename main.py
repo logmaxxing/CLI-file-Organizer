@@ -10,7 +10,7 @@ home = Path.home()
 # You can add own extensions here under pre-defined folder names(Keys in file_types) 
 # or Create your own separate one with this format, make sure you make it inside file_types disctionary
 # "xyz":['.extentions']
-with open('extensions.json', r) as f:
+with open('extensions.json', 'r') as f:
     file_types= json.load(f) 
 '''
 old way of me sorting files.
