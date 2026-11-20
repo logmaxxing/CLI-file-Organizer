@@ -1,0 +1,20 @@
+{
+  "Pictures": [
+    ".jpg", ".png", ".webp", ".gif", ".svg", ".tiff", ".tif", ".heic", ".heif", ".bmp"
+    ],
+  "Videos": [
+    ".mp4", ".mkv", ".mov", ".avi", ".webm"
+    ],
+  "Audio": [
+    ".mp3", ".wav", ".m4a", ".flac", ".ogg"
+    ],
+  "Documents": [
+    ".pdf", ".docx", ".xlsx", ".pptx", ".txt", ".csv"
+    ],
+  "dev_files": [
+    ".py", ".js", ".ts", ".java", ".cpp", ".json", ".md", ".html", ".css"
+    ],
+  "Packages": [
+    ".zip", ".rar", ".exe", ".msi", ".dmg", ".pkg", ".iso", ".gz", ".7z", ".tar.bz2", ".jar", ".deb", ".pacman", ".sh", ".tgz", ".run", ".bin", ".desktop", ".conf", ".cfg", ".zst"
+    ]
+}

@@ -1,7 +1,6 @@
 from pathlib import Path
-import glob
-# import json
-from os import scandir, replace
+import json
+# from os import scandir, replace
 from argparse import Namespace,ArgumentParser
 import shutil
 
@@ -11,26 +10,8 @@ home = Path.home()
 # You can add own extensions here under pre-defined folder names(Keys in file_types) 
 # or Create your own separate one with this format, make sure you make it inside file_types disctionary
 # "xyz":['.extentions']
-file_types= {
-    "Pictures" : [
-        '.jpg','.png','.webp','.gif','.svg','.tiff','.tif','.heic','.heif','.bmp'
-        ],
-    "Videos" : [
-        '.mp4','.mkv','.mov','.avi','.webm'
-        ],
-    "Audio" : [
-        '.mp3','.wav','.m4a','.flac','.ogg'
-    ],
-    "Documents" : [
-        '.pdf','.docx','.xlsx','.pptx','.txt','.csv'
-    ],
-    "dev_files" : [
-        '.py','.js','.ts','.java','.cpp','.json','.md','.html','.css'
-    ],
-    "Packages" : [
-        '.zip','.rar','.exe','.msi','.dmg','.pkg','.iso','.gz','.7z','.tar.bz2','.jar','.deb','.pacman','.sh','.tgz','.run','.bin','.desktop','.conf','.cfg','.zst'
-    ]
-}
+with open('extensions.json', r) as f:
+    file_types= json.load(f) 
 '''
 old way of me sorting files.
 '''
