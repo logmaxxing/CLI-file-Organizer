@@ -136,6 +136,12 @@ def move_files():
     #             print(f"{files} exists in {values}")
     #             way = [key for key in file_keys if file_types[key] == values]
     #             shutil.move(full_path/files,full_path/way[0])
+    moved = 0
+    skipped = 0
+    deleted = 0
+    owrite = 0
+    removed = 0
+
     try:
         # optimized and improved way:
         files,_ = verbose_content()
@@ -168,28 +174,39 @@ def move_files():
                     if dest_file_path.exists():
 
                         if ARGS.skip:
-                            print(f"[SKIPPED] Duplicate Found: {file_name}")
+                            # print(f"[SKIPPED] Duplicate Found: {file_name}")
+                            skipped += 1
                             continue
+
                         elif ARGS.overwrite:
-                            print(f"[OVERWRITE] Replacing : {file_name}")
+                            # print(f"[OVERWRITE] Replacing : {file_name}")
                             replace(file_path,dest_file_path)
+                            owrite += 1
                         elif ARGS.delete:
                             file_path.unlink()
                             dest_file_path.unlink()
-                            print(f"[DELETED] {file_name} from Both Directories")
+                            deleted += 1
                             continue
+                        
                         else:
-                            print(f"[SKIPPED] {file_name} exists (No conflict flag set).")
+                            skipped += 1
+                            # print(f"[SKIPPED] {file_name} exists (No conflict flag set).")
                     else:
-                        print(f"[MOVED] {file_name} -> {dest_folder}")
+                        # print(f"[MOVED] {file_name} -> {dest_folder}")
                         shutil.move(file_path,dest_folder)
+                        moved += 1
+
             else:
                 if ARGS.remove:
-                    if file_path.suffix not in EXT_MAP:
-                        file_path.unlink()
-                        print(f"[REMOVED] {file_name} -> not categorized.")
+                        if file_path.suffix not in EXT_MAP:
+                                file_path.unlink()
+                                print(f"[REMOVED] {file_name} -> not categorized.")
+                        removed += 1
                 else:
-                    print(f"[SKIPPED] {file_name} not categorized.")
+                    skipped += 1
+                # print(f"[SKIPPED] {file_name} not categorized.")
+        records = f"Moved: {moved}\nSkipped: {skipped}\nDeleted: {deleted}\nOver Write: {owrite}\nRemoved: {removed}"
+        print(records)
         return True
     except Exception as e:
         return False
