@@ -1,6 +1,6 @@
 from pathlib import Path
 import json
-from os import scandir, replace
+from os import replace
 from argparse import Namespace,ArgumentParser
 import shutil
 
